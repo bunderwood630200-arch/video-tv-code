@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video TV Code - Device Registered</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding-top: 60px;
+    }
+
+    .top-bar {
+      background: #007BFF;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .brand {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .success {
+      color: green;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .steps {
+      text-align: left;
+      margin: 20px 0;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .call-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .support {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* Chat button */
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* Chat box */
+    .chat-box {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 260px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .chat-header {
+      background: #007BFF;
+      color: white;
+      padding: 10px;
+    }
+
+    .chat-body {
+      padding: 10px;
+      height: 120px;
+      overflow-y: auto;
+      text-align: left;
+    }
+
+    .chat-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+      border: none;
+      padding: 10px;
+      width: 80%;
+      outline: none;
+    }
+
+    .chat-input button {
+      border: none;
+      background: #007BFF;
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  📞 Support: (888) 498-9259
+</div>
+
+<div class="brand">📺 Video TV Code</div>
+
+<div class="container">
+  <div class="success">✔ Device Registered Successfully</div>
+
+  <div class="steps">
+    <div><strong>Step 1:</strong> Your device has been linked.</div>
+    <div><strong>Step 2:</strong> Call support to complete verification.</div>
+    <div><strong>Step 3:</strong> Activation will be completed after verification.</div>
+  </div>
+
+  <a class="call-btn" href="tel:8884989259">
+    📞 Call Now
+  </a>
+
+  <div class="support">
+    Need help? Call us at <strong>(888) 498-9259</strong>
+  </div>
+</div>
+
+<!-- Chat Button -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<!-- Chat Box -->
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">Live Support</div>
+  <div class="chat-body" id="chatBody">
+    <div>Hi! How can we help you?</div>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatInput" placeholder="Type message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  const box = document.getElementById("chatBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function sendMessage() {
+  const input = document.getElementById("chatInput");
+  const body = document.getElementById("chatBody");
+
+  if (input.value.trim() !== "") {
+    const msg = document.createElement("div");
+    msg.textContent = input.value;
+    body.appendChild(msg);
+    input.value = "";
+    body.scrollTop = body.scrollHeight;
+  }
+}
+</script>
+
+</body>
+</html>
