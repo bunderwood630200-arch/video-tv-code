@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video TV Code | Device Setup</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f171e;
+  color: white;
+}
+
+.top-bar {
+  background: #0a1117;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.header {
+  padding: 20px 40px;
+  border-bottom: 1px solid #1f2a36;
+}
+
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.card {
+  background: #1a242f;
+  padding: 40px;
+  border-radius: 12px;
+  width: 420px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5);
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: #bbb;
+}
+
+input {
+  margin-top: 20px;
+  padding: 12px;
+  width: 80%;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background: #00a8e1;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0090c5;
+}
+
+.call-btn {
+  margin-top: 15px;
+  display: block;
+  padding: 12px;
+  background: #1f80e0;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.call-btn:hover {
+  background: #1669b2;
+}
+
+.support-note {
+  font-size: 13px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.steps {
+  margin-top: 25px;
+  text-align: left;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.steps div {
+  margin: 8px 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* CHAT */
+.chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00a8e1;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.chat-box {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 260px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.chat-header {
+  background: #00a8e1;
+  color: white;
+  padding: 10px;
+}
+
+.chat-body {
+  padding: 10px;
+  font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  📞 Support: (888) 498-9259
+</div>
+
+<div class="header">
+  <div class="brand">📺 Video TV Code</div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <h2>Link Your Device</h2>
+    <p>Enter the code displayed on your TV to connect your device.</p>
+
+    <input type="text" id="code" maxlength="6" placeholder="Enter Code">
+
+    <button onclick="goNext()">Continue</button>
+
+    <!-- CALL BUTTON -->
+    <a href="tel:8884989259" class="call-btn">
+      📞 Call Support for Help
+    </a>
+
+    <!-- SMALL TEXT -->
+    <p class="support-note">
+      Support is optional and available if needed.
+    </p>
+
+    <div class="steps">
+      <div><strong>Step 1:</strong> Open the Video TV app on your Smart TV.</div>
+      <div><strong>Step 2:</strong> Enter the code shown on your screen.</div>
+      <div><strong>Step 3:</strong> Your device will be linked automatically.</div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  © 2026 Video TV Code
+</div>
+
+<!-- CHAT -->
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">Support Chat</div>
+  <div class="chat-body">
+    Hi! This is a demo chat. Please call support for help.
+  </div>
+</div>
+
+<script>
+function goNext() {
+  const code = document.getElementById("code").value;
+  const valid = /^[A-Za-z0-9]{6}$/;
+
+  if (!valid.test(code)) {
+    alert("Please enter a valid 6-digit code");
+    return;
+  }
+
+  window.location.href = "success.html";
+}
+
+function toggleChat() {
+  const box = document.getElementById("chatBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
