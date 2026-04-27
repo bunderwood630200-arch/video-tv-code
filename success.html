@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Device Registered</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .top-bar {
+      background: #007BFF;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .main {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .success {
+      color: green;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .steps {
+      text-align: left;
+      margin: 20px 0;
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .call-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    .support {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    /* Chat */
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .chat-box {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 260px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .chat-header {
+      background: #007BFF;
+      color: white;
+      padding: 10px;
+    }
+
+    .chat-body {
+      padding: 10px;
+      height: 120px;
+      overflow-y: auto;
+    }
+
+    .chat-input {
+      display: flex;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+    }
+
+    .chat-input button {
+      padding: 10px;
+      border: none;
+      background: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  📞 Support: (888) 498-9259
+</div>
+
+<div class="main">
+  <div class="box">
+    <div class="success">✔ Device Registered Successfully</div>
+
+    <div class="steps">
+      <div><strong>Step 1:</strong> Device linked</div>
+      <div><strong>Step 2:</strong> Call support for verification</div>
+      <div><strong>Step 3:</strong> Activation completed after verification</div>
+    </div>
+
+    <a href="tel:8884989259" class="call-btn">📞 Call Now</a>
+
+    <div class="support">
+      Need help? Call <strong>(888) 498-9259</strong>
+    </div>
+  </div>
+</div>
+
+<div class="chat-btn" onclick="toggleChat()">💬</div>
+
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">Support Chat</div>
+  <div class="chat-body" id="chatBody">Hi! How can we help?</div>
+  <div class="chat-input">
+    <input type="text" id="msg">
+    <button onclick="sendMsg()">Send</button>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  const box = document.getElementById("chatBox");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
+
+function sendMsg() {
+  const input = document.getElementById("msg");
+  const body = document.getElementById("chatBody");
+
+  if (input.value.trim()) {
+    body.innerHTML += "<div>" + input.value + "</div>";
+    input.value = "";
+  }
+}
+</script>
+
+</body>
+</html>
