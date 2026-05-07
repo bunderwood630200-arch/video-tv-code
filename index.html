@@ -12,7 +12,10 @@
 
 <script>
 window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+
+function gtag(){
+  dataLayer.push(arguments);
+}
 
 gtag('js', new Date());
 
@@ -72,7 +75,9 @@ input{
   border:none;
   outline:none;
   text-align:center;
-  font-size:16px;
+  font-size:18px;
+  letter-spacing:2px;
+  text-transform:uppercase;
 }
 
 /* BUTTON */
@@ -234,8 +239,9 @@ button:hover{
     <input
       id="code"
       type="text"
-      placeholder="Enter Code"
-      maxlength="6"
+      placeholder="Enter 12-Digit Code"
+      maxlength="12"
+      autocomplete="off"
     >
 
     <button onclick="goNext()">
@@ -255,7 +261,7 @@ button:hover{
 
       <p>
         <strong>Step 2:</strong>
-        Enter the 6-digit code shown on your TV screen above.
+        Enter the 12-digit code shown on your TV screen above.
       </p>
 
       <p>
@@ -307,11 +313,15 @@ button:hover{
 
 function goNext(){
 
-  let code = document.getElementById('code').value;
+  let code =
+    document.getElementById('code')
+    .value
+    .trim()
+    .toUpperCase();
 
-  if(code.trim() === ''){
+  if(code.length !== 12){
 
-    alert('Please enter your TV code');
+    alert('Please enter a valid 12-digit code');
     return;
 
   }
@@ -329,7 +339,8 @@ function goNext(){
 
 function toggleChat(){
 
-  let c = document.getElementById('chatBox');
+  let c =
+    document.getElementById('chatBox');
 
   c.style.display =
     c.style.display === 'block'
