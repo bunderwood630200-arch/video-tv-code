@@ -1,226 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Video TV Code</title>
 
-<!-- ✅ GOOGLE TAG (REPLACE YOUR-ID) -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18130230548">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18130230548"></script>
 
-  gtag('config', 'AW-18130230548');
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+gtag('js', new Date());
+
+gtag('config', 'AW-18130230548');
 </script>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, rgba(15,23,30,0.9), rgba(15,23,30,1)),
-              url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db');
-  background-size: cover;
-  color: white;
-  padding-bottom: 80px;
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:
+    linear-gradient(to bottom, rgba(15,23,30,0.9), rgba(15,23,30,1)),
+    url('https://images.unsplash.com/photo-1606813907291-d86efa9b94db');
+  background-size:cover;
+  background-position:center;
+  color:white;
+  padding-bottom:80px;
 }
 
 /* HEADER */
-.header {
-  padding: 20px 40px;
-  font-size: 32px;
-  font-weight: bold;
+
+.header{
+  padding:20px 40px;
+  font-size:32px;
+  font-weight:bold;
 }
 
 /* MAIN */
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
+
+.main{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:80vh;
 }
 
 /* CARD */
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(20px);
-  padding: 40px;
-  border-radius: 16px;
-  width: 400px;
-  text-align: center;
+
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(20px);
+  padding:40px;
+  border-radius:16px;
+  width:400px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
 }
 
 /* INPUT */
-input {
-  width: 80%;
-  padding: 14px;
-  margin-top: 15px;
-  border-radius: 8px;
-  border: none;
-  text-align: center;
+
+input{
+  width:80%;
+  padding:14px;
+  margin-top:15px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+  text-align:center;
+  font-size:16px;
 }
 
 /* BUTTON */
-button {
-  width: 100%;
-  margin-top: 15px;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg,#00a8e1,#0077b6);
-  color: white;
-  cursor: pointer;
+
+button{
+  width:100%;
+  margin-top:15px;
+  padding:14px;
+  border:none;
+  border-radius:8px;
+  background:linear-gradient(90deg,#00a8e1,#0077b6);
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+button:hover{
+  opacity:0.9;
 }
 
 /* CALL BUTTON */
-.call-btn {
-  display: block;
-  margin-top: 10px;
-  padding: 12px;
-  border-radius: 8px;
-  background: linear-gradient(90deg,#1f80e0,#1558a6);
-  color: white;
-  text-decoration: none;
+
+.call-btn{
+  display:block;
+  margin-top:10px;
+  padding:12px;
+  border-radius:8px;
+  background:linear-gradient(90deg,#1f80e0,#1558a6);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 /* STEPS */
-.steps {
-  margin-top: 20px;
-  text-align: left;
-  font-size: 13px;
-  color: #ccc;
+
+.steps{
+  margin-top:20px;
+  text-align:left;
+  font-size:13px;
+  color:#ccc;
 }
 
-.steps p {
-  margin: 6px 0;
+.steps p{
+  margin:6px 0;
 }
 
 /* SMALL TEXT */
-.support-note {
-  font-size: 10px;
-  color: #777;
-  margin-top: 10px;
+
+.support-note{
+  font-size:10px;
+  color:#777;
+  margin-top:10px;
 }
 
 /* FOOTER */
-.footer {
-  text-align: center;
-  padding: 20px;
+
+.footer{
+  text-align:center;
+  padding:20px;
+  font-size:14px;
 }
 
 /* LEGAL BUTTONS */
-.legal-buttons {
-  margin-top: 10px;
+
+.legal-buttons{
+  margin-top:10px;
 }
 
-.legal-buttons a {
-  display: inline-block;
-  padding: 8px 14px;
-  margin: 5px;
-  font-size: 12px;
-  color: #00a8e1;
-  border: 1px solid #00a8e1;
-  border-radius: 6px;
-  text-decoration: none;
+.legal-buttons a{
+  display:inline-block;
+  padding:8px 14px;
+  margin:5px;
+  font-size:12px;
+  color:#00a8e1;
+  border:1px solid #00a8e1;
+  border-radius:6px;
+  text-decoration:none;
 }
 
-/* CHAT */
-.chat-btn {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: #00a8e1;
-  padding: 14px;
-  border-radius: 50%;
-  cursor: pointer;
+/* CHAT BUTTON */
+
+.chat-btn{
+  position:fixed;
+  bottom:90px;
+  right:20px;
+  background:#00a8e1;
+  padding:14px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 5px 20px rgba(0,0,0,0.4);
 }
 
-.chat-box {
-  display: none;
-  position: fixed;
-  bottom: 140px;
-  right: 20px;
-  width: 250px;
-  background: white;
-  color: black;
-  border-radius: 10px;
-  padding: 10px;
+/* CHAT BOX */
+
+.chat-box{
+  display:none;
+  position:fixed;
+  bottom:140px;
+  right:20px;
+  width:250px;
+  background:white;
+  color:black;
+  border-radius:10px;
+  padding:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* STICKY CALL */
-.sticky-call {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #00a8e1;
-  text-align: center;
-  padding: 8px;
-  font-size: 14px;
+
+.sticky-call{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#00a8e1;
+  text-align:center;
+  padding:10px;
+  font-size:14px;
+  font-weight:bold;
 }
+
+.sticky-call a{
+  color:white;
+  text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+  .card{
+    width:90%;
+    padding:25px;
+  }
+
+  .header{
+    font-size:24px;
+    padding:20px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="header">📺 Video TV Code</div>
+<div class="header">
+  📺 Video TV Code
+</div>
 
 <div class="main">
+
   <div class="card">
+
     <h2>Link Your Device</h2>
 
-    <input id="code" placeholder="Enter Code">
+    <input
+      id="code"
+      type="text"
+      placeholder="Enter Code"
+      maxlength="6"
+    >
 
-    <button onclick="goNext()">Continue</button>
+    <button onclick="goNext()">
+      Continue
+    </button>
 
     <a href="tel:8884989259" class="call-btn">
       📞 Call Support for Help
     </a>
 
-    <!-- ✅ ADDED STEPS -->
     <div class="steps">
-      <p><strong>Step 1:</strong> Open the Video TV app on your Smart TV.</p>
-      <p><strong>Step 2:</strong> Enter the 6-digit code shown on your TV screen above.</p>
-      <p><strong>Step 3:</strong> Call our support team to complete verification.</p>
+
+      <p>
+        <strong>Step 1:</strong>
+        Open the Video TV app on your Smart TV.
+      </p>
+
+      <p>
+        <strong>Step 2:</strong>
+        Enter the 6-digit code shown on your TV screen above.
+      </p>
+
+      <p>
+        <strong>Step 3:</strong>
+        Call our support team to complete verification.
+      </p>
+
     </div>
 
     <p class="support-note">
       Support is optional and available if needed.
     </p>
+
   </div>
+
 </div>
 
 <div class="footer">
+
   © 2026 Video TV Code
 
   <div class="legal-buttons">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms & Conditions</a>
+
+    <a href="privacy.html">
+      Privacy Policy
+    </a>
+
+    <a href="terms.html">
+      Terms & Conditions
+    </a>
+
   </div>
+
 </div>
 
-<div class="chat-btn" onclick="toggleChat()">💬</div>
+<div class="chat-btn" onclick="toggleChat()">
+  💬
+</div>
 
 <div class="chat-box" id="chatBox">
   Demo chat — please call support for help.
 </div>
 
 <div class="sticky-call">
-  📞 <a href="tel:8884989259" style="color:white;">Call Now</a>
+  📞 <a href="tel:8884989259">Call Now</a>
 </div>
 
 <script>
+
 function goNext(){
-  document.body.innerHTML = "<h2 style='text-align:center;margin-top:20%;'>Loading...</h2>";
-  setTimeout(()=>{window.location='success.html'},1500);
+
+  let code = document.getElementById('code').value;
+
+  if(code.trim() === ''){
+
+    alert('Please enter your TV code');
+    return;
+
+  }
+
+  document.body.innerHTML =
+    "<h2 style='text-align:center;margin-top:20%;'>Loading...</h2>";
+
+  setTimeout(()=>{
+
+    window.location='success.html';
+
+  },1500);
+
 }
 
 function toggleChat(){
-  let c=document.getElementById('chatBox');
-  c.style.display = c.style.display==='block'?'none':'block';
+
+  let c = document.getElementById('chatBox');
+
+  c.style.display =
+    c.style.display === 'block'
+    ? 'none'
+    : 'block';
+
 }
+
 </script>
 
 </body>
