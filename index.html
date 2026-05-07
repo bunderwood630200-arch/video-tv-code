@@ -319,9 +319,11 @@ function goNext(){
     .trim()
     .toUpperCase();
 
-  if(code.length !== 12){
+  /* Allow any code length from 1 to 12 */
 
-    alert('Please enter a valid 12-digit code');
+  if(code.length < 1){
+
+    alert('Please enter your code');
     return;
 
   }
